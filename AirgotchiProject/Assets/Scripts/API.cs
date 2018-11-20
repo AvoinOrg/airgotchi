@@ -14,27 +14,36 @@ kandee palata siihen aikasempaan zip fileen */
 
 public class API : MonoBehaviour {
 
-    private const string URL = "https://button.kunnas.com/query_no2?latitude=37.7749&longitude=122.4194&duration=1";
+    private const string URL = "https://button.kunnas.com/query_no2?latitude=37.7749&longitude=122.4194&duration=7";
     public Text responseText;
+    public AirData airData;
+    int airPoints;
+    GameLogic gameLogic;
 
     void Start() {
+        gameLogic = FindObjectOfType<GameLogic>();
         Request();
     }
 
-    public void Request()
-    {
+    public void Request() {
         WWW request = new WWW(URL);
         StartCoroutine(OnResponse(request));
     }
 
-    private IEnumerator OnResponse(WWW req)
-    {
+    private IEnumerator OnResponse(WWW req) {
 
         yield return req;
 
         if (req.text != "{\"error\": \"No data\"}") {
-            responseText.text = req.text;
+            airData = JsonUtility.FromJson<AirData>(req.text);
+            AirDataToAirPoints(airData);
         }
+    }
+
+    void AirDataToAirPoints(AirData airData) {
+        airPoints = Mathf.RoundToInt(airData.no2_concentration * 1000000);
+        gameLogic.airPoints = airPoints;
+        responseText.text = "" + airPoints;
     }
 }
 

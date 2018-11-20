@@ -226,18 +226,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 62
+    m_FontSize: 68
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 64
+    m_MaxSize: 68
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 84/100
+  m_Text: 84
 --- !u!222 &46944866
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 37.6, y: -10.850491}
+  m_AnchoredPosition: {x: 43.8, y: -10.850491}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &161480941
@@ -984,6 +984,7 @@ MonoBehaviour:
   sad: {fileID: 21300000, guid: 9b1dc497c7901424e8e789995d96f655, type: 3}
   angry: {fileID: 21300000, guid: 9c09686ba0a45eb40aca0962afc2ce41, type: 3}
   target: {fileID: 536903863}
+  airPoints: 0
 --- !u!1 &1509330216
 GameObject:
   m_ObjectHideFlags: 0
